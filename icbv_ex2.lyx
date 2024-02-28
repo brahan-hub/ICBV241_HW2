@@ -1,0 +1,298 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.5cm
+\topmargin 2cm
+\rightmargin 0.5cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+Introduction to Computational and Biological Vision - Assignment 1
+\end_layout
+
+\begin_layout Author
+Brahan Wassan, Dan Zlotnikov
+\end_layout
+
+\begin_layout Section*
+\noindent
+Question 1 - Edge Detection
+\end_layout
+
+\begin_layout Subsection*
+Section A
+\end_layout
+
+\begin_layout Standard
+\noindent
+Given 
+\begin_inset Formula $I\left(x,y\right)=x+siny$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+And the following Edge Detectors: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ = edge dector based on the local maximum of 
+\begin_inset Formula $\left|\nabla I\right|$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $E_{2}$
+\end_inset
+
+ = Edge detector based on finding the ZC of the Laplacian 
+\begin_inset Formula $∆I$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Compute analytically the edge points detected by each of the edge detectors:
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+For E1: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+first eval 
+\begin_inset Formula $\left|\nabla I\right|$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\left|\nabla I\right|=\left(\frac{∂I}{∂x},\frac{∂I}{∂y}\right)=\left\Vert \left(1,cosy\right)\right\Vert =\sqrt{1^{2}+cos^{2}(y)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+we got an expression that independent of x , so we will assume that any
+ x will work, and find the extramum for y:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{align*}
+\frac{∂}{∂y}\left|\nabla I\right|= & \frac{∂}{∂y}\left(\sqrt{1^{2}+cos^{2}(y)}\right)=-\frac{\sin\left(2y\right)}{2\sqrt{1+\cos^{2}\left(y\right)}}\\
+\frac{∂}{∂y}\left|\nabla I\right|= & 0\\
+-\frac{\sin\left(2y\right)}{2\sqrt{1+\cos^{2}\left(y\right)}}= & 0\\
+sin(2y)= & 0\\
+y= & \frac{\pi}{2}+\pi k\text{ },\pi k\text{ }\text{ },\forall k\in\mathbb{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and now for the second derviative:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{align*}
+\frac{∂^{2}}{∂y^{2}}\left|\nabla I\right|= & -\frac{4\cos\left(2y\right)\left(1+\cos^{2}\left(y\right)\right)+\sin^{2}\left(2y\right)}{4\left(1+\cos^{2}\left(y\right)\right)\sqrt{1+\cos^{2}\left(y\right)}}\\
+\left(\frac{∂^{2}}{∂y^{2}}\left|\nabla I\right|\right)_{y=\frac{\pi}{2}}= & -\frac{4\cos\left(2\left(\frac{\pi}{2}\right)\right)\left(1+\cos^{2}\left(\left(\frac{\pi}{2}\right)\right)\right)+\sin^{2}\left(2\left(\frac{\pi}{2}\right)\right)}{4\left(1+\cos^{2}\left(\left(\frac{\pi}{2}\right)\right)\right)\sqrt{1+\cos^{2}\left(\left(\frac{\pi}{2}\right)\right)}}\\
+= & -\frac{4\cos\left(\pi\right)\left(1+\cos^{2}\left(\left(\frac{\pi}{2}\right)\right)\right)+\sin^{2}\left(\pi\right)}{4\left(1+\cos^{2}\left(\left(\frac{\pi}{2}\right)\right)\right)\sqrt{1+\cos^{2}\left(\left(\frac{\pi}{2}\right)\right)}}\\
+= & 1\\
+\left(\frac{∂^{2}}{∂y^{2}}\left|\nabla I\right|\right)_{y=\pi}= & -\frac{4\cos\left(2\left(\pi\right)\right)\left(1+\cos^{2}\left(\left(\pi\right)\right)\right)+\sin^{2}\left(2\left(\pi\right)\right)}{4\left(1+\cos^{2}\left(\left(\pi\right)\right)\right)\sqrt{1+\cos^{2}\left(\left(\pi\right)\right)}}\\
+= & -\frac{\sqrt{2}}{2}
+\end{align*}
+
+\end_inset
+
+for the first assignment of y we got positive value, so its not an extramum
+ point.
+\end_layout
+
+\begin_layout Standard
+\noindent
+so we got that 
+\begin_inset Formula $\left(x,\pi k\right)\text{ }\text{ }\forall k\in\mathbb{N}$
+\end_inset
+
+ is our extramum points.
+\end_layout
+
+\begin_layout Standard
+\noindent
+for 
+\begin_inset Formula $E_{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+lets calc the laplacian:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{align*}
+\Delta I= & \frac{∂^{2}I}{∂x^{2}}+\frac{∂^{2}I}{∂y^{2}}\\
+= & \frac{∂^{2}}{∂x^{2}}\left(x+siny\right)+\frac{∂^{2}}{∂y^{2}}\left(x+siny\right)\\
+= & \frac{∂}{∂x}\left(1\right)+\frac{∂}{∂y}\left(cos(y)\right)\\
+= & 0-sin(y)\\
+= & sin(y)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+lets find all the points where 
+\begin_inset Formula $\Delta I=0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\Delta I= & 0\\
+sin(y)= & 0\\
+y= & \pi k\text{ }\text{ }\forall k\in\mathbb{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+so our edge points according to 
+\begin_inset Formula $E_{2}$
+\end_inset
+
+ are: 
+\begin_inset Formula $\left(x,\pi k\right)\text{ }\text{ }\forall k\in\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The result are identical, but its clearly that the computations of 
+\begin_inset Formula $E_{2}$
+\end_inset
+
+ are much more simpler.
+\end_layout
+
+\begin_layout Subsection*
+Section B
+\end_layout
+
+\end_body
+\end_document
