@@ -87,6 +87,7 @@ Introduction to Computational and Biological Vision - Assignment 2
 \end_layout
 
 \begin_layout Author
+\noindent
 Brahan Wassan, Dan Zlotnikov
 \end_layout
 
@@ -96,6 +97,7 @@ Question 1 - Edge Detection
 \end_layout
 
 \begin_layout Subsection*
+\noindent
 Section A
 \end_layout
 
@@ -296,10 +298,12 @@ Question 2 - Parametric Curves
 \end_layout
 
 \begin_layout Subsection*
+\noindent
 Section A
 \end_layout
 
 \begin_layout Standard
+\noindent
 The parametric equation of a straight line in 3D is 
 \begin_inset Formula $a\left(t\right)=\left(x\left(t\right),\ y\left(t\right),\ z\left(t\right)\right)$
 \end_inset
@@ -309,6 +313,7 @@ The parametric equation of a straight line in 3D is
 \end_layout
 
 \begin_layout Standard
+\noindent
 The parametric equation of a straight line in 2D is 
 \begin_inset Formula $a_{2d}\left(t\right)=\left(x\left(t\right),\ y\left(t\right)\right)$
 \end_inset
@@ -317,12 +322,14 @@ The parametric equation of a straight line in 2D is
 \end_layout
 
 \begin_layout Standard
+\noindent
 Without loss of generality, we assume that the center of projection is at
  the origin.
  
 \end_layout
 
 \begin_layout Standard
+\noindent
 Upon projection onto the plane 
 \begin_inset Formula $z=f$
 \end_inset
@@ -344,6 +351,7 @@ y_{i}= & \frac{f}{z(t)}\cdot y(t)
 \end_layout
 
 \begin_layout Standard
+\noindent
 Dividing both equation will evaluate: 
 \begin_inset Formula $\frac{x_{i}}{y_{i}}$
 \end_inset
@@ -356,6 +364,7 @@ Dividing both equation will evaluate:
 \end_layout
 
 \begin_layout Standard
+\noindent
 And we know that 
 \begin_inset Formula $a\left(t\right)$
 \end_inset
@@ -376,7 +385,56 @@ projection also has a constant slope, hence it is a straight line.
 \end_layout
 
 \begin_layout Subsection*
+\noindent
 Section B
+\end_layout
+
+\begin_layout Standard
+\noindent
+add picture:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename Screenshot 2024-03-06 at 16.37.27.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+1.
+ Explantion: lets assume our point is 
+\begin_inset Formula $\left(-2,-1,2.5\right)$
+\end_inset
+
+ now we will compute the presepctive projection of the point.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{align*}
+u= & \frac{-3*-2}{2.5}+0=2.4\\
+v= & \frac{-3*-1}{2.5}+0=1.2
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+so the projected point on the image plane is 
+\begin_inset Formula $\left(2.4,1.2\right)$
+\end_inset
+
+.
 \end_layout
 
 \end_body
